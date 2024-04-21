@@ -1,0 +1,72 @@
+<!-- Task 4:
+Problem Statement
+Create a grid based layout containing four grid items which arranges them as the screen size changes. -->
+<!-- SOLUTIONS: -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-04</title>
+    <!-- will be using Internal CSS -->
+    <style>
+        body{
+            margin: 0px;
+            font-family: arial, sans-serif;
+        }
+        .grid-container{
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            min-height: 100vh;
+            padding: 20px;
+            background-color: azure;
+        }
+        .item{
+            background-color: beige;
+            padding: 20px;
+            text-align: center;
+        }
+        .header{
+            background-color: red;
+            color: white;
+        }
+        .sidebar{
+         background-color: green;
+         color: white;
+
+        }
+        .main{
+            background-color: blue;
+            color: white;
+        }
+        .footer{
+            background-color: chocolate;
+            color: white;
+        }
+
+        @media screen and (max-width:700px){
+            .grid-container{
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-areas: 
+                "header header header"
+                "sidebar main main"
+                "footer footer footer";
+            }
+            
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="item header">Box-1</div>
+        <div class="item sidebar">Box-2</div>
+        <div class="item main">Box-3</div>
+        <div class="item footer">Box-4</div>
+    </div>
+    
+</body>
+</html>
